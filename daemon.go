@@ -43,7 +43,7 @@ func RunDaemon(stderr *log.Logger, realHook string, config *DaemonConfig) {
 	waitRequests := make(chan *Waiter)
 
 	// Channel for communicating with workers.
-	workerRequests := make(chan *QueueMessage, 256)
+	workerRequests := make(chan *QueueMessage, 512)
 
 	// Execute hook for one request.
 	execOne := func(m *QueueMessage) {
